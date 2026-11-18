@@ -1,0 +1,86 @@
+{
+ "_nota": "Checkpoint e segni del codice di recupero. Mai cambiare l'ordine: si aggiunge solo in fondo. 'storia': true = il segno resta anche se si perde una sfida dopo l'ultimo checkpoint.",
+ "checkpoint": [
+  {
+   "id": "inizio",
+   "zona": "poetto",
+   "x": 15,
+   "y": 8,
+   "direzione": "giu"
+  },
+  {
+   "id": "poetto_gatto",
+   "zona": "poetto",
+   "x": 8,
+   "y": 4,
+   "direzione": "su"
+  },
+  {
+   "id": "cagliari_gatto",
+   "zona": "cagliari",
+   "x": 10,
+   "y": 3,
+   "direzione": "su"
+  },
+  {
+   "id": "efisio_sfida",
+   "zona": "cagliari",
+   "x": 8,
+   "y": 6,
+   "direzione": "giu"
+  },
+  {
+   "id": "campidano_gatto",
+   "zona": "campidano",
+   "x": 9,
+   "y": 4,
+   "direzione": "su"
+  }
+ ],
+ "segni": [
+  {
+   "id": "risveglio_visto",
+   "storia": true
+  },
+  {
+   "id": "pescatore_sentito",
+   "storia": true
+  },
+  {
+   "id": "fenicotteri_volati",
+   "storia": true
+  },
+  {
+   "id": "granchio",
+   "storia": true
+  },
+  {
+   "id": "efisio_battuto",
+   "storia": true
+  },
+  {
+   "id": "fazzoletto_trovato",
+   "storia": true
+  },
+  {
+   "id": "fazzoletto_reso",
+   "storia": true
+  },
+  {
+   "id": "guardia_dorme",
+   "storia": true
+  },
+  {
+   "id": "cane_passato",
+   "storia": true
+  },
+  {
+   "id": "pecora_al_ponte",
+   "storia": true
+  },
+  {
+   "id": "capitolo1_finito",
+   "storia": true
+  }
+ ]
+}

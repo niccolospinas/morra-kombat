@@ -1,0 +1,308 @@
+{
+ "_nota": "Testi e scene della zona, nel formato delle scene (FORMATO.md, sezioni 3 e 4). 'nomi': il nome sulla linguetta per ogni 'chi'. 'scene': ogni scena è una lista di passi; gli eventi di zona.json la richiamano con il campo 'scena' (anche inizio, uscite e spavento). Segni che non sono in codice.json (per esempio efisio_sentito) restano nel salvataggio ma non nel codice di recupero.",
+ "nomi": {
+  "pescatore": "Pescatore",
+  "nieddu": "Nieddu"
+ },
+ "scene": {
+  "risveglio": [
+   {
+    "posa": "naufrago",
+    "sprite": "naufrago_risveglio_0"
+   },
+   {
+    "tendine": "apri"
+   },
+   {
+    "pensa": "..."
+   },
+   {
+    "posa": "naufrago",
+    "sprite": "naufrago_risveglio_1"
+   },
+   {
+    "pensa": "Sabbia bianca... sole... Sono ancora vivo?"
+   },
+   {
+    "posa": "naufrago",
+    "sprite": "naufrago_risveglio_2"
+   },
+   {
+    "aspetta": 400
+   },
+   {
+    "posa": "naufrago",
+    "sprite": "naufrago_risveglio_3"
+   },
+   {
+    "pensa": "Della mia barca non è rimasto niente."
+   },
+   {
+    "pensa": "Solo la chiglia, come la lisca di un pesce."
+   },
+   {
+    "posa": "naufrago",
+    "sprite": null
+   },
+   {
+    "pensa": "Niente barca, niente soldi, niente scarpe. Almeno c'è il sole."
+   },
+   {
+    "aiuto": "Muoviti con la croce. Con A guardi le cose e parli con la gente."
+   },
+   {
+    "segno": "risveglio_visto"
+   }
+  ],
+  "guarda_chiglia": [
+   {
+    "pensa": "La chiglia della mia barca."
+   },
+   {
+    "pensa": "Sembra la lisca di un pesce già mangiato."
+   },
+   {
+    "pensa": "Questa non torna in mare nemmeno con un miracolo."
+   }
+  ],
+  "guarda_vela": [
+   {
+    "pensa": "La vela. Più buchi che vela."
+   },
+   {
+    "pensa": "Ci passerebbe un gabbiano. Anzi, due."
+   }
+  ],
+  "guarda_cassa": [
+   {
+    "conta": "cassa"
+   },
+   {
+    "se": "conta:cassa>=3",
+    "allora": [
+     {
+      "pensa": "Il granchio mi guarda storto."
+     },
+     {
+      "pensa": "Ahi! Mi ha pizzicato!"
+     },
+     {
+      "pensa": "D'accordo, d'accordo: la cassa è tua."
+     },
+     {
+      "segno": "granchio"
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Una cassa sfondata."
+     },
+     {
+      "pensa": "Dentro, solo sabbia... e un granchio offeso."
+     }
+    ]
+   }
+  ],
+  "guarda_botte": [
+   {
+    "pensa": "Una botte vuota."
+   },
+   {
+    "pensa": "Peccato: era la parte migliore del carico."
+   }
+  ],
+  "pensiero_mare": [
+   {
+    "pensa": "Il mare. Da lì sono arrivato... e per oggi lì non ci torno."
+   }
+  ],
+  "pensiero_sella": [
+   {
+    "pensa": "Quella montagna ha la forma di una sella."
+   },
+   {
+    "pensa": "Chissà chi ci va a cavallo."
+   }
+  ],
+  "pensiero_canale": [
+   {
+    "pensa": "Un canale chiude la spiaggia."
+   },
+   {
+    "pensa": "A nuoto? No, grazie: per oggi ho nuotato abbastanza."
+   }
+  ],
+  "pensiero_passaggio": [
+   {
+    "pensa": "Un sentiero tra la montagna e lo stagno."
+   },
+   {
+    "pensa": "Porta a nord."
+   }
+  ],
+  "fenicotteri_avvicina": [
+   {
+    "pensa": "Uccelli rosa, con le zampe come trampoli."
+   },
+   {
+    "pensa": "Ma dove sono finito?"
+   }
+  ],
+  "fenicotteri_volati": [
+   {
+    "pensa": "Ops. Scusate, gente rossa."
+   }
+  ],
+  "parla_pescatore": [
+   {
+    "se": "pescatore_sentito",
+    "allora": [
+     {
+      "se": "fenicotteri_volati",
+      "allora": [
+       {
+        "dici": "Li hai fatti volare via tutti! Mi'... hai la grazia di un tonno.",
+        "chi": "pescatore"
+       }
+      ],
+      "altrimenti": [
+       {
+        "dici": "Cagliari è a nord, piccioccu. Tra la Sella e lo stagno.",
+        "chi": "pescatore"
+       },
+       {
+        "dici": "E tieni le mani pronte, eh.",
+        "chi": "pescatore"
+       }
+      ]
+     }
+    ],
+    "altrimenti": [
+     {
+      "dici": "Ohi, piccioccu! Ti ha sputato il mare, eh?",
+      "chi": "pescatore"
+     },
+     {
+      "dici": "Questa è la spiaggia del Poetto. E quella là è la Sella del Diavolo.",
+      "chi": "pescatore"
+     },
+     {
+      "dici": "Il diavolo ci cadde da cavallo, cacciato dagli angeli. La sella è rimasta lì.",
+      "chi": "pescatore"
+     },
+     {
+      "dici": "E tu? Senza barca e senza un soldo, si vede. Ma non ti preoccupare.",
+      "chi": "pescatore"
+     },
+     {
+      "dici": "Qui sull'isola quasi niente si paga coi denari. Le cose si risolvono con le mani.",
+      "chi": "pescatore"
+     },
+     {
+      "pensa": "Con le mani?!"
+     },
+     {
+      "dici": "Eh, a morra, piccioccu! Che avevi capito?",
+      "chi": "pescatore"
+     },
+     {
+      "segno": "pescatore_sentito"
+     },
+     {
+      "scegli": [
+       {
+        "voce": "Dov'è la città?",
+        "passi": [
+         {
+          "dici": "Cagliari è a nord. Passa tra la Sella e lo stagno e segui il sentiero.",
+          "chi": "pescatore"
+         },
+         {
+          "dici": "Lì cerca Efisio, al porto. Uno che a morra non ha mai detto di no.",
+          "chi": "pescatore"
+         }
+        ]
+       },
+       {
+        "voce": "E quegli uccelli rosa?",
+        "passi": [
+         {
+          "dici": "Sa genti arrubia, la gente rossa: i fenicotteri. Vengono a mangiare nello stagno.",
+          "chi": "pescatore"
+         },
+         {
+          "dici": "Non fanno male a nessuno. Tu cerca di non spaventarli, eh.",
+          "chi": "pescatore"
+         }
+        ]
+       },
+       {
+        "voce": "E quel gatto nero?",
+        "passi": [
+         {
+          "dici": "Nieddu? Non è di nessuno. Va e viene, da chissà dove.",
+          "chi": "pescatore"
+         },
+         {
+          "dici": "Dicono che arrivi sempre prima di chi lo cerca. Mah!",
+          "chi": "pescatore"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "parla_nieddu": [
+   {
+    "suono": "miao"
+   },
+   {
+    "salva": "poetto_gatto"
+   },
+   {
+    "se": "nieddu_poetto",
+    "allora": [
+     {
+      "pensa": "Ron ron..."
+     },
+     {
+      "aiuto": "Partita salvata."
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Un gatto nero. Dorme come un sasso."
+     },
+     {
+      "pensa": "Mi guarda come se mi conoscesse..."
+     },
+     {
+      "aiuto": "Hai trovato Nieddu, il gatto nero! Accarezzarlo salva la partita."
+     },
+     {
+      "aiuto": "Lo incontrerai di nuovo più avanti. Chissà come fa."
+     },
+     {
+      "segno": "nieddu_poetto"
+     }
+    ]
+   }
+  ],
+  "verso_cagliari": [
+   {
+    "se": "cagliari_vista",
+    "allora": [],
+    "altrimenti": [
+     {
+      "pensa": "Cagliari... Speriamo che lì le barche costino poco."
+     },
+     {
+      "segno": "cagliari_vista"
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "_nota": "Scene comuni a tutta la Storia (non legate a una zona), nello stesso formato delle zone.",
+ "nomi": {},
+ "scene": {
+  "consiglio_iphone": [
+   {
+    "aiuto": "Per non perdere i progressi, aggiungi Morra Kombat alla schermata Home."
+   },
+   {
+    "aiuto": "In Safari: Condividi, poi \"Aggiungi alla schermata Home\"."
+   }
+  ]
+ }
+}

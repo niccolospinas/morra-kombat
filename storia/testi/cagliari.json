@@ -1,0 +1,816 @@
+{
+ "_nota": "Testi e scene della zona, nel formato delle scene (FORMATO.md, sezioni 3 e 4). 'nomi': il nome sulla linguetta per ogni 'chi'. 'scene': ogni scena è una lista di passi; gli eventi di zona.json la richiamano con il campo 'scena' (anche inizio, uscite e spavento). Segni che non sono in codice.json (per esempio efisio_sentito) restano nel salvataggio ma non nel codice di recupero. La sfida con Efisio (passo B7) è il tutorial: le scene tutorial_efisio_* si vedono dentro la partita, sopra l'arena.",
+ "nomi": {
+  "efisio": "Efisio",
+  "guardia": "Guardia",
+  "guardia_stampace": "Guardia",
+  "signora": "Tzia Bonaria",
+  "velaio": "Velaio",
+  "suonatore": "Suonatore",
+  "nieddu": "Nieddu",
+  "bue": "Pistoccu"
+ },
+ "segni": [
+  "efisio_battuto",
+  "fazzoletto_trovato",
+  "fazzoletto_reso",
+  "guardia_dorme"
+ ],
+ "scene": {
+  "parla_efisio": [
+   {
+    "se": "efisio_battuto",
+    "allora": [
+     {
+      "dici": "Gianna, in Barbagia. Segui la strada a nord, e tieni le mani pronte.",
+      "chi": "efisio"
+     },
+     {
+      "dici": "E lascia stare Pistoccu, il mio bue. A morra non ci gioca, ma ti fissa finché non te ne vai.",
+      "chi": "efisio"
+     }
+    ],
+    "altrimenti": [
+     {
+      "se": "efisio_sentito",
+      "allora": [
+       {
+        "dici": "Allora, forestiero? Il vascello è sempre lì che aspetta.",
+        "chi": "efisio"
+       },
+       {
+        "scegli": [
+         {
+          "voce": "Giochiamo!",
+          "passi": [
+           {
+            "dici": "Ajò! Mani in vista!",
+            "chi": "efisio"
+           },
+           {
+            "sfida": "efisio",
+            "checkpoint": "efisio_sfida",
+            "tutorial": "tutorial_efisio",
+            "vinci": [
+             {
+              "dici": "Ah! Sei svelto, piccioccu. Il vascello è tuo.",
+              "chi": "efisio"
+             },
+             {
+              "dici": "Però... la vela se la sono mangiata i topi.",
+              "chi": "efisio"
+             },
+             {
+              "dici": "E dove la trovo, una vela?",
+              "chi": "naufrago"
+             },
+             {
+              "dici": "Una sola tesse vele che reggono il mare d'inverno: Gianna, in Barbagia.",
+              "chi": "efisio"
+             },
+             {
+              "dici": "La strada è lunga, e c'è gente che gioca sporco.",
+              "chi": "efisio"
+             },
+             {
+              "segno": "efisio_battuto"
+             },
+             {
+              "scena": "porta_si_apre"
+             }
+            ],
+            "perdi": [
+             {
+              "dici": "L'importante è divertirsi! Riprova, quando vuoi.",
+              "chi": "efisio"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "voce": "Non ancora.",
+          "passi": [
+           {
+            "dici": "Quando vuoi. Il mare non scappa.",
+            "chi": "efisio"
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "altrimenti": [
+       {
+        "dici": "Ohi, forestiero! Guardi il mio vascello come un gatto guarda il pesce.",
+        "chi": "efisio"
+       },
+       {
+        "dici": "È suo? Mi serve una barca per tornare a casa.",
+        "chi": "naufrago"
+       },
+       {
+        "dici": "Qui niente si compra coi denari, lo sai? Si gioca. A morra.",
+        "chi": "efisio"
+       },
+       {
+        "dici": "Facciamo così: se mi batti, il vascello è tuo.",
+        "chi": "efisio"
+       },
+       {
+        "pensa": "Non ho mai giocato a morra in vita mia..."
+       },
+       {
+        "dici": "Non sai giocare? Ti insegno io. Mani in vista, ragazzo!",
+        "chi": "efisio"
+       },
+       {
+        "segno": "efisio_sentito"
+       },
+       {
+        "sfida": "efisio",
+        "checkpoint": "efisio_sfida",
+        "tutorial": "tutorial_efisio",
+        "vinci": [
+         {
+          "dici": "Ah! Sei svelto, piccioccu. Il vascello è tuo.",
+          "chi": "efisio"
+         },
+         {
+          "dici": "Però... la vela se la sono mangiata i topi.",
+          "chi": "efisio"
+         },
+         {
+          "dici": "E dove la trovo, una vela?",
+          "chi": "naufrago"
+         },
+         {
+          "dici": "Una sola tesse vele che reggono il mare d'inverno: Gianna, in Barbagia.",
+          "chi": "efisio"
+         },
+         {
+          "dici": "La strada è lunga, e c'è gente che gioca sporco.",
+          "chi": "efisio"
+         },
+         {
+          "segno": "efisio_battuto"
+         },
+         {
+          "scena": "porta_si_apre"
+         }
+        ],
+        "perdi": [
+         {
+          "dici": "L'importante è divertirsi! Riprova, quando vuoi.",
+          "chi": "efisio"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "tutorial_efisio_inizio": [
+   {
+    "dici": "Si gioca così: tutti e due buttiamo una mano, da 1 a 5 dita.",
+    "chi": "efisio"
+   },
+   {
+    "dici": "E ognuno chiama quanto fanno le dita di tutti e due. Chi indovina, colpisce!",
+    "chi": "efisio"
+   },
+   {
+    "aiuto": "Prima scegli la tua MANO (tasti blu), poi chiama la SOMMA (tasti arancio)."
+   },
+   {
+    "aiuto": "Scelta la mano, sotto si accendono solo le somme possibili."
+   },
+   {
+    "aiuto": "Ogni colpo toglie una vita. Chi resta senza vite perde."
+   },
+   {
+    "dici": "Per ora niente fretta: pensaci quanto vuoi.",
+    "chi": "efisio"
+   }
+  ],
+  "tutorial_efisio_colpo": [
+   {
+    "dici": "Ahi! Hai indovinato la somma: mi hai colpito.",
+    "chi": "efisio"
+   },
+   {
+    "dici": "Visto? Basta contare. Ma non ci abituare, eh.",
+    "chi": "efisio"
+   }
+  ],
+  "tutorial_efisio_colpito": [
+   {
+    "dici": "Colpito! Stavolta l'ho indovinata io.",
+    "chi": "efisio"
+   }
+  ],
+  "tutorial_efisio_nullo": [
+   {
+    "dici": "Colpo nullo: quando indovinano tutti e due, o nessuno.",
+    "chi": "efisio"
+   }
+  ],
+  "tutorial_efisio_tempo": [
+   {
+    "dici": "Bravo, piccioccu. Ma la morra vera si gioca svelta!",
+    "chi": "efisio"
+   },
+   {
+    "aiuto": "Da ora hai 3 secondi a turno: guarda la barra del tempo. Se si svuota, perdi una vita."
+   }
+  ],
+  "tutorial_efisio_guancia": [
+   {
+    "aiuto": "Mossa speciale: L'altra guancia!"
+   },
+   {
+    "aiuto": "Se colpisci Efisio due volte di fila, il secondo colpo prende anche te."
+   }
+  ],
+  "parla_guardia": [
+   {
+    "se": "guardia_dorme",
+    "allora": [
+     {
+      "pensa": "Dorme in piedi. Meglio non svegliarlo."
+     }
+    ],
+    "altrimenti": [
+     {
+      "conta": "guardia"
+     },
+     {
+      "se": "conta:guardia>=5",
+      "allora": [
+       {
+        "dici": "¡Al... to... zzz...",
+        "chi": "guardia"
+       },
+       {
+        "pensa": "Si è addormentato in piedi. Bravo soldato."
+       },
+       {
+        "segno": "guardia_dorme"
+       }
+      ],
+      "altrimenti": [
+       {
+        "se": "guardia_sentito",
+        "allora": [
+         {
+          "dici": "¡Alto! Ho detto di no.",
+          "chi": "guardia"
+         }
+        ],
+        "altrimenti": [
+         {
+          "dici": "¡Alto! Il Castello non è posto per forestieri scalzi.",
+          "chi": "guardia"
+         },
+         {
+          "pensa": "Scalzo, sì. Ma con dignità."
+         },
+         {
+          "segno": "guardia_sentito"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "parla_guardia_stampace": [
+   {
+    "se": "efisio_battuto",
+    "allora": [
+     {
+      "dici": "Efisio garantisce per te. Passa, forestiero. ¡Buen viaje!",
+      "chi": "guardia_stampace"
+     }
+    ],
+    "altrimenti": [
+     {
+      "se": "guardia_stampace_sentito",
+      "allora": [
+       {
+        "dici": "Senza lasciapassare, niente porta. Prova al porto, forestiero.",
+        "chi": "guardia_stampace"
+       },
+       {
+        "se": "guardia_dorme",
+        "allora": [
+         {
+          "se": "stampace_ride",
+          "allora": [],
+          "altrimenti": [
+           {
+            "dici": "Cosa? Il mio collega del Castello dorme di nuovo?",
+            "chi": "guardia_stampace"
+           },
+           {
+            "dici": "Quello dorme più di un gatto al sole. ¡Madre mía!",
+            "chi": "guardia_stampace"
+           },
+           {
+            "segno": "stampace_ride"
+           }
+          ]
+         }
+        ]
+       }
+      ],
+      "altrimenti": [
+       {
+        "dici": "¡Alto! Di qui si esce verso il Campidano. Ma la porta resta chiusa.",
+        "chi": "guardia_stampace"
+       },
+       {
+        "dici": "E come si apre?",
+        "chi": "naufrago"
+       },
+       {
+        "dici": "Con un lasciapassare. O con la parola di qualcuno che conta, in città.",
+        "chi": "guardia_stampace"
+       },
+       {
+        "dici": "Al porto c'è uno che conta parecchio. Ma con lui si paga... a morra.",
+        "chi": "guardia_stampace"
+       },
+       {
+        "segno": "guardia_stampace_sentito"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "parla_signora": [
+   {
+    "se": "fazzoletto_reso",
+    "allora": [
+     {
+      "dici": "Ladri! Ah, sei tu. Salutami Efisio.",
+      "chi": "signora"
+     },
+     {
+      "dici": "E se sali a Bonaria, accendi un cero anche per me.",
+      "chi": "signora"
+     }
+    ],
+    "altrimenti": [
+     {
+      "se": "fazzoletto_trovato",
+      "allora": [
+       {
+        "scena": "fazzoletto_reso"
+       }
+      ],
+      "altrimenti": [
+       {
+        "se": "signora_sentito",
+        "allora": [
+         {
+          "dici": "Il mio fazzoletto, piccioccu! Cerca vicino al mare!",
+          "chi": "signora"
+         }
+        ],
+        "altrimenti": [
+         {
+          "dici": "Ladri! Ladri con le piume! Con quelle zampe e quel becco!",
+          "chi": "signora"
+         },
+         {
+          "dici": "Signora, tutto bene?",
+          "chi": "naufrago"
+         },
+         {
+          "dici": "Bene un corno! Un gabbiano mi ha rubato su muccadori, il mio fazzoletto!",
+          "chi": "signora"
+         },
+         {
+          "dici": "L'avrà lasciato vicino al mare. Se me lo riporti, ti do un consiglio d'oro.",
+          "chi": "signora"
+         },
+         {
+          "dici": "Ah, e io sono Tzia Bonaria. Come la Madonna lassù!",
+          "chi": "signora"
+         },
+         {
+          "dici": "Mi hanno battezzata in quella chiesa, sai?",
+          "chi": "signora"
+         },
+         {
+          "segno": "signora_sentito"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "fazzoletto_reso": [
+   {
+    "dici": "È questo, il suo fazzoletto?",
+    "chi": "naufrago"
+   },
+   {
+    "dici": "Su muccadori miu! Benedetto ragazzo!",
+    "chi": "signora"
+   },
+   {
+    "segno": "fazzoletto_reso"
+   },
+   {
+    "dici": "Vai a giocare con Efisio, vero? Ascolta bene.",
+    "chi": "signora"
+   },
+   {
+    "dici": "Non colpirlo due volte di fila: porge l'altra guancia... e la paghi anche tu.",
+    "chi": "signora"
+   },
+   {
+    "dici": "E ora, campane a festa! Tziu Antoni! ¡Suona, ca c'è un ragazzo d'oro!",
+    "chi": "signora"
+   },
+   {
+    "aspetta": 500
+   },
+   {
+    "suono": "campane_festa"
+   },
+   {
+    "aspetta": 1500
+   },
+   {
+    "pensa": "Campane a festa... per un fazzoletto?"
+   },
+   {
+    "pensa": "In questa città sono tutti un po' matti. Mi piace."
+   }
+  ],
+  "porta_si_apre": [
+   {
+    "dici": "Va', ti faccio aprire la porta di Stampace.",
+    "chi": "efisio"
+   },
+   {
+    "tendine": "chiudi"
+   },
+   {
+    "inquadra": {
+     "x": 1,
+     "y": 2
+    },
+    "ms": 0
+   },
+   {
+    "tendine": "apri"
+   },
+   {
+    "dici": "¡Abrid la puerta! Ordine di Efisio!",
+    "chi": "guardia_stampace"
+   },
+   {
+    "suono": "spranga"
+   },
+   {
+    "apri": "stampace"
+   },
+   {
+    "aspetta": 600
+   },
+   {
+    "tendine": "chiudi"
+   },
+   {
+    "inquadra": "naufrago",
+    "ms": 0
+   },
+   {
+    "tendine": "apri"
+   },
+   {
+    "pensa": "La porta di Stampace è aperta."
+   },
+   {
+    "pensa": "Verso nord. Verso Gianna."
+   }
+  ],
+  "parla_velaio": [
+   {
+    "se": "efisio_battuto",
+    "allora": [
+     {
+      "dici": "Il vascello di Efisio, eh? Senza vela non va da nessuna parte.",
+      "chi": "velaio"
+     },
+     {
+      "dici": "Le mie vele non reggono il mare d'inverno. Quelle di Gianna sì.",
+      "chi": "velaio"
+     }
+    ],
+    "altrimenti": [
+     {
+      "se": "velaio_sentito",
+      "allora": [
+       {
+        "dici": "Niente denari, niente vela. Prova con Efisio, giù al porto.",
+        "chi": "velaio"
+       }
+      ],
+      "altrimenti": [
+       {
+        "dici": "Una vela? Bella, la vela. E con quali denari?",
+        "chi": "velaio"
+       },
+       {
+        "dici": "Non ho un soldo.",
+        "chi": "naufrago"
+       },
+       {
+        "dici": "Allora niente vela. Qui sull'isola o paghi, o giochi.",
+        "chi": "velaio"
+       },
+       {
+        "dici": "E io a morra non gioco più: ci ho perso pure le scarpe.",
+        "chi": "velaio"
+       },
+       {
+        "pensa": "Almeno siamo in due."
+       },
+       {
+        "segno": "velaio_sentito"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "parla_suonatore": [
+   {
+    "se": "suonatore_sentito",
+    "allora": [
+     {
+      "dici": "Ascolta, ascolta. Questa la sanno anche i sassi.",
+      "chi": "suonatore"
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Che musica... sembra che il fiato non finisca mai."
+     },
+     {
+      "dici": "È il respiro circolare: si suona senza fermarsi mai. Come la morra!",
+      "chi": "suonatore"
+     },
+     {
+      "dici": "Tre canne, una bocca sola. Ajò, balla, piccioccu!",
+      "chi": "suonatore"
+     },
+     {
+      "segno": "suonatore_sentito"
+     }
+    ]
+   }
+  ],
+  "parla_nieddu": [
+   {
+    "suono": "miao"
+   },
+   {
+    "salva": "cagliari_gatto"
+   },
+   {
+    "se": "nieddu_cagliari",
+    "allora": [
+     {
+      "pensa": "Ron ron..."
+     },
+     {
+      "aiuto": "Partita salvata."
+     }
+    ],
+    "altrimenti": [
+     {
+      "se": "nieddu_poetto",
+      "allora": [
+       {
+        "pensa": "Un gatto nero... ma questo non era al Poetto?"
+       },
+       {
+        "pensa": "Impossibile. Eppure mi fa l'occhiolino."
+       }
+      ],
+      "altrimenti": [
+       {
+        "pensa": "Un gatto nero che dorme sulla soglia."
+       },
+       {
+        "pensa": "Mi fa l'occhiolino, come se mi aspettasse."
+       }
+      ]
+     },
+     {
+      "aiuto": "Partita salvata."
+     },
+     {
+      "segno": "nieddu_cagliari"
+     }
+    ]
+   }
+  ],
+  "parla_bue": [
+   {
+    "suono": "muggito"
+   },
+   {
+    "se": "bue_sentito",
+    "allora": [
+     {
+      "dici": "Muuu.",
+      "chi": "bue"
+     },
+     {
+      "pensa": "Rumina e mi guarda. Mi guarda e rumina."
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Un bue rosso, attaccato a un carretto."
+     },
+     {
+      "pensa": "Ha le corna più lunghe dei remi della mia barca."
+     },
+     {
+      "dici": "Muuu...",
+      "chi": "bue"
+     },
+     {
+      "pensa": "Mi guarda come un vecchio amico."
+     },
+     {
+      "pensa": "È il primo, in questa città."
+     },
+     {
+      "segno": "bue_sentito"
+     }
+    ]
+   }
+  ],
+  "guarda_vascello": [
+   {
+    "se": "efisio_battuto",
+    "allora": [
+     {
+      "pensa": "Il mio vascello! Mio. Senza vela, ma mio."
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Un vascello vero, con due alberi."
+     },
+     {
+      "pensa": "Ma senza neanche uno straccio di vela."
+     }
+    ]
+   }
+  ],
+  "guarda_porta_stampace": [
+   {
+    "se": "efisio_battuto",
+    "allora": [
+     {
+      "pensa": "La porta di Stampace è aperta."
+     },
+     {
+      "pensa": "Verso nord. Verso Gianna."
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "La porta di Stampace. Chiusa, con la spranga."
+     },
+     {
+      "pensa": "C'è una guardia: forse sa come si apre."
+     }
+    ]
+   }
+  ],
+  "guarda_elefante": [
+   {
+    "pensa": "Sulla torre c'è un piccolo elefante di pietra."
+   },
+   {
+    "pensa": "Un elefante? In Sardegna? Strana isola."
+   }
+  ],
+  "guarda_santuario": [
+   {
+    "pensa": "Una chiesa chiara in cima alla scalinata."
+   },
+   {
+    "pensa": "Da lassù si vedrà tutto il golfo."
+   },
+   {
+    "pensa": "Accanto, un campanile piccolo piccolo."
+   },
+   {
+    "pensa": "Chissà chi tira le corde."
+   }
+  ],
+  "guarda_carretto": [
+   {
+    "pensa": "Il carretto di Efisio: tavole, paglia e una ruota di legno pieno."
+   },
+   {
+    "pensa": "Sembra comodo. Per un bue, almeno."
+   }
+  ],
+  "guarda_vele": [
+   {
+    "pensa": "Vele stese ad asciugare."
+   },
+   {
+    "pensa": "Belle... e care, immagino."
+   }
+  ],
+  "guarda_reti": [
+   {
+    "se": "fazzoletto_trovato",
+    "allora": [
+     {
+      "pensa": "Solo reti. E un odore di pesce che non se ne va."
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Reti ammucchiate. E in mezzo..."
+     },
+     {
+      "pensa": "...un fazzoletto ricamato! Sarà di qualcuno."
+     },
+     {
+      "aiuto": "Hai trovato su muccadori, il fazzoletto."
+     },
+     {
+      "segno": "fazzoletto_trovato"
+     }
+    ]
+   }
+  ],
+  "pensiero_citta": [
+   {
+    "pensa": "Cagliari! Case colorate, mura altissime..."
+   },
+   {
+    "pensa": "E un sacco di gente che non mi conosce."
+   }
+  ],
+  "pensiero_porto": [
+   {
+    "pensa": "Il porto. Barche, reti, gabbiani..."
+   },
+   {
+    "pensa": "E nessuno che mi presti una barca. Per ora."
+   }
+  ],
+  "verso_campidano": [
+   {
+    "se": "capitolo1_finito",
+    "allora": [],
+    "altrimenti": [
+     {
+      "pensa": "Il Campidano. Poi la Barbagia, e Gianna."
+     },
+     {
+      "pensa": "Ajò, piedi: si cammina."
+     },
+     {
+      "aiuto": "Primo capitolo completato! Il viaggio continua."
+     },
+     {
+      "segno": "capitolo1_finito"
+     }
+    ]
+   }
+  ],
+  "tutorial_efisio_aiutino": [
+   {
+    "dici": "Ti do un aiutino: stavolta butto 3 dita. Parola di santo.",
+    "chi": "efisio"
+   },
+   {
+    "dici": "Tu scegli la tua mano, aggiungi 3, e chiama la somma!",
+    "chi": "efisio"
+   }
+  ]
+ }
+}

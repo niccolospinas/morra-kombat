@@ -1,0 +1,225 @@
+{
+ "nome": "Poetto",
+ "tile": 16,
+ "larghezza": 30,
+ "altezza": 12,
+ "fotogrammi": 4,
+ "ms_fotogramma": 350,
+ "onda_alta": 2,
+ "sfondo": "sfondo_{f}.png",
+ "inizio": {
+  "x": 15,
+  "y": 8,
+  "direzione": "giu",
+  "scena": "risveglio"
+ },
+ "uscite": [
+  {
+   "x": 6,
+   "y": 0,
+   "verso": "cagliari",
+   "arrivo": {
+    "x": 26,
+    "y": 10,
+    "direzione": "su"
+   },
+   "scena": "verso_cagliari"
+  },
+  {
+   "x": 7,
+   "y": 0,
+   "verso": "cagliari",
+   "arrivo": {
+    "x": 27,
+    "y": 10,
+    "direzione": "su"
+   },
+   "scena": "verso_cagliari"
+  }
+ ],
+ "eventi": [
+  {
+   "tipo": "guarda",
+   "x": 14,
+   "y": 7,
+   "id": "chiglia",
+   "scena": "guarda_chiglia"
+  },
+  {
+   "tipo": "guarda",
+   "x": 17,
+   "y": 7,
+   "id": "vela",
+   "scena": "guarda_vela"
+  },
+  {
+   "tipo": "guarda",
+   "x": 18,
+   "y": 8,
+   "id": "cassa",
+   "scena": "guarda_cassa"
+  },
+  {
+   "tipo": "guarda",
+   "x": 13,
+   "y": 5,
+   "id": "botte",
+   "scena": "guarda_botte"
+  },
+  {
+   "tipo": "parla",
+   "x": 21,
+   "y": 5,
+   "id": "pescatore",
+   "scena": "parla_pescatore"
+  },
+  {
+   "tipo": "parla",
+   "x": 8,
+   "y": 3,
+   "id": "nieddu",
+   "scena": "parla_nieddu",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 12,
+   "y": 9,
+   "larghezza": 15,
+   "id": "mare",
+   "una_volta": true,
+   "scena": "pensiero_mare"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 9,
+   "y": 5,
+   "altezza": 4,
+   "id": "sella",
+   "una_volta": true,
+   "scena": "pensiero_sella"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 26,
+   "y": 5,
+   "altezza": 4,
+   "id": "canale",
+   "una_volta": true,
+   "scena": "pensiero_canale"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 6,
+   "y": 3,
+   "larghezza": 2,
+   "id": "passaggio",
+   "una_volta": true,
+   "scena": "pensiero_passaggio"
+  },
+  {
+   "tipo": "spavento",
+   "x": 10,
+   "y": 3,
+   "larghezza": 16,
+   "altezza": 2,
+   "id": "fenicotteri",
+   "animale": "fenicottero",
+   "scena": "fenicotteri_avvicina",
+   "scena_tutti_via": "fenicotteri_volati",
+   "segno_tutti_via": "fenicotteri_volati"
+  }
+ ],
+ "personaggi": [
+  {
+   "id": "pescatore",
+   "x": 21,
+   "y": 5,
+   "direzione": "giu",
+   "sprite": "pescatore",
+   "inattivo": "rete"
+  },
+  {
+   "id": "nieddu",
+   "x": 8,
+   "y": 3,
+   "direzione": "giu",
+   "sprite": "gatto",
+   "inattivo": "dorme",
+   "parlando": "sveglio"
+  }
+ ],
+ "animali": [
+  {
+   "tipo": "fenicottero",
+   "x": 150,
+   "y": 3,
+   "verso": 1
+  },
+  {
+   "tipo": "fenicottero",
+   "x": 186,
+   "y": 12,
+   "verso": -1
+  },
+  {
+   "tipo": "fenicottero",
+   "x": 226,
+   "y": 1,
+   "verso": 1
+  },
+  {
+   "tipo": "fenicottero",
+   "x": 266,
+   "y": 14,
+   "verso": -1
+  },
+  {
+   "tipo": "fenicottero",
+   "x": 330,
+   "y": 4,
+   "verso": 1
+  }
+ ],
+ "testi": "../testi/poetto.json",
+ "suoni": [
+  {
+   "tipo": "risacca",
+   "y_da": 144,
+   "y_a": 192,
+   "raggio": 72,
+   "sincrona": true
+  },
+  {
+   "tipo": "fenicotteri",
+   "x": 240,
+   "y": 12,
+   "raggio": 96
+  },
+  {
+   "tipo": "vento",
+   "ovunque": true,
+   "volume": 0.3
+  },
+  {
+   "tipo": "ronron",
+   "x": 136,
+   "y": 56,
+   "raggio": 24
+  }
+ ],
+ "blocchi": [
+  "######..######################",
+  "######..######################",
+  "######.....................###",
+  "######...#.....#.....##.#..###",
+  "######...............##....###",
+  "######.......#.#...........###",
+  "######........##.#.........###",
+  "######.......######........###",
+  "######..........###........###",
+  "######.....................###",
+  "##############################",
+  "##############################"
+ ]
+}

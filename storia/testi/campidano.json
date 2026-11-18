@@ -1,0 +1,595 @@
+{
+ "_nota": "Testi e scene del Campidano (FORMATO.md, sezioni 3 e 4). Il pastore dorme di là dal fiume; Lampu, il suo cane, fa la guardia al ponticello. Si passa portandogli la bisaccia del padrone, che la pecora nera sta masticando tra i fichi d'India (segno bisaccia; poi cane_passato: Lampu va a dormire accanto al pastore, campo 'posti'). La pecora nera segue il naufrago fino al ponte (passi segui, muovi, mostra, nascondi: passo B8).",
+ "nomi": {
+  "pastore": "Pastore",
+  "cane": "Lampu",
+  "bisaccia": "Bisaccia",
+  "pecora_nera": "Pecora nera",
+  "nieddu": "Nieddu",
+  "pecora": "Pecora",
+  "pecora_1": "Pecora",
+  "pecora_2": "Pecora",
+  "pecora_3": "Pecora",
+  "pecora_4": "Pecora",
+  "pecora_5": "Pecora",
+  "pecora_6": "Pecora"
+ },
+ "scene": {
+  "parla_cane": [
+   {
+    "se": "cane_passato",
+    "allora": [
+     {
+      "suono": "abbaio"
+     },
+     {
+      "dici": "Bau!",
+      "chi": "cane"
+     },
+     {
+      "pensa": "Ora scodinzola. Basta una salsiccia per diventare amici."
+     }
+    ],
+    "altrimenti": [
+     {
+      "se": "bisaccia",
+      "allora": [
+       {
+        "scena": "dai_bisaccia"
+       }
+      ],
+      "altrimenti": [
+       {
+        "suono": "ringhio"
+       },
+       {
+        "dici": "Grrr...",
+        "chi": "cane"
+       },
+       {
+        "conta": "cane"
+       },
+       {
+        "se": "conta:cane>=2",
+        "allora": [
+         {
+          "pensa": "Niente da fare."
+         },
+         {
+          "pensa": "Forse con qualcosa che sa di casa sua..."
+         }
+        ],
+        "altrimenti": [
+         {
+          "pensa": "Un cane pastore grande come un vitello."
+         },
+         {
+          "pensa": "E il ponticello lo considera suo."
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "dai_bisaccia": [
+   {
+    "posa": "cane",
+    "sprite": "cane_seduto_0"
+   },
+   {
+    "dici": "*snif snif*",
+    "chi": "cane"
+   },
+   {
+    "pensa": "Annusa la bisaccia. Annusa me. Annusa di nuovo la bisaccia."
+   },
+   {
+    "scegli": [
+     {
+      "voce": "Tieni, è tua.",
+      "passi": []
+     },
+     {
+      "voce": "Prima fammi passare.",
+      "passi": [
+       {
+        "posa": "cane",
+        "sprite": "cane_ringhia_0"
+       },
+       {
+        "suono": "ringhio"
+       },
+       {
+        "dici": "GRRR.",
+        "chi": "cane"
+       },
+       {
+        "pensa": "D'accordo, d'accordo: tieni."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "posa": "cane",
+    "sprite": "cane_scodinzola_0"
+   },
+   {
+    "suono": "abbaio"
+   },
+   {
+    "dici": "Bau!",
+    "chi": "cane"
+   },
+   {
+    "posa": "cane",
+    "sprite": null
+   },
+   {
+    "muovi": "cane",
+    "verso": "su",
+    "caselle": 3
+   },
+   {
+    "muovi": "cane",
+    "verso": "destra",
+    "caselle": 4
+   },
+   {
+    "muovi": "cane",
+    "verso": "su",
+    "caselle": 1
+   },
+   {
+    "segno": "cane_passato"
+   },
+   {
+    "pensa": "Ha portato la bisaccia al padrone, di là dal fiume."
+   },
+   {
+    "pensa": "Il ponticello è libero."
+   }
+  ],
+  "prendi_bisaccia": [
+   {
+    "se": "bisaccia",
+    "allora": [],
+    "altrimenti": [
+     {
+      "pensa": "Una bisaccia di lana a righe, mezza masticata."
+     },
+     {
+      "pensa": "Dentro c'è pane... e odore di salsiccia."
+     },
+     {
+      "suono": "belato"
+     },
+     {
+      "dici": "Bee!",
+      "chi": "pecora_nera"
+     },
+     {
+      "pensa": "Scusa, bella: questa non è tua."
+     },
+     {
+      "nascondi": "bisaccia"
+     },
+     {
+      "aiuto": "Hai preso la bisaccia del pastore."
+     },
+     {
+      "segno": "bisaccia"
+     }
+    ]
+   }
+  ],
+  "parla_pastore": [
+   {
+    "se": "pastore_sentito",
+    "allora": [
+     {
+      "se": "pecora_al_ponte",
+      "allora": [
+       {
+        "dici": "Mmh... quella pecora nera non segue mai nessuno.",
+        "chi": "pastore"
+       },
+       {
+        "dici": "Tu hai qualcosa di strano, piccioccu. Zzz...",
+        "chi": "pastore"
+       }
+      ],
+      "altrimenti": [
+       {
+        "dici": "La Giara è a nord. Sali dalla scala di basalto...",
+        "chi": "pastore"
+       },
+       {
+        "dici": "E occhio ai cavallini... zzz...",
+        "chi": "pastore"
+       }
+      ]
+     }
+    ],
+    "altrimenti": [
+     {
+      "suono": "russare"
+     },
+     {
+      "pensa": "Russa come un mantice."
+     },
+     {
+      "dici": "Ehm... signore?",
+      "chi": "naufrago"
+     },
+     {
+      "dici": "Mmh? Chi è? Lampu, chi hai fatto passare?",
+      "chi": "pastore"
+     },
+     {
+      "dici": "Ah, la mia bisaccia! Me l'ero scordata di là dal fiume.",
+      "chi": "pastore"
+     },
+     {
+      "dici": "Dopo pranzo, sotto l'olivo, uno chiude gli occhi un attimo...",
+      "chi": "pastore"
+     },
+     {
+      "dici": "...e si sveglia a cena?",
+      "chi": "naufrago"
+     },
+     {
+      "dici": "Ohi, spiritoso! E dove vai così di fretta, a piedi nudi?",
+      "chi": "pastore"
+     },
+     {
+      "dici": "In Barbagia, da Gianna.",
+      "chi": "naufrago"
+     },
+     {
+      "dici": "In Barbagia? Eh, la strada è lunga.",
+      "chi": "pastore"
+     },
+     {
+      "dici": "Prima c'è la Giara: quella montagna piatta, laggiù a nord.",
+      "chi": "pastore"
+     },
+     {
+      "dici": "Lassù vivono i cavallini selvaggi. E qualcuno che li difende.",
+      "chi": "pastore"
+     },
+     {
+      "segno": "pastore_sentito"
+     },
+     {
+      "scegli": [
+       {
+        "voce": "Grazie!",
+        "passi": [
+         {
+          "dici": "Di niente. Ehi... ma la salsiccia dov'è finita?",
+          "chi": "pastore"
+         },
+         {
+          "pensa": "Lampu guarda il cielo. Meglio non dire niente."
+         }
+        ]
+       },
+       {
+        "voce": "E quella capanna?",
+        "passi": [
+         {
+          "dici": "È la mia pinnetta. Dentro ho il formaggio... quello coi vermi, il più buono.",
+          "chi": "pastore"
+         },
+         {
+          "pensa": "Coi vermi?!"
+         },
+         {
+          "dici": "Vuoi assaggiare?",
+          "chi": "pastore"
+         },
+         {
+          "dici": "No, grazie! Ho... un po' di fretta.",
+          "chi": "naufrago"
+         },
+         {
+          "dici": "Peccato. Come vuoi. Zzz...",
+          "chi": "pastore"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "parla_pecora_nera": [
+   {
+    "suono": "belato"
+   },
+   {
+    "se": "pecora_al_ponte",
+    "allora": [
+     {
+      "dici": "Bee.",
+      "chi": "pecora_nera"
+     },
+     {
+      "pensa": "Ha deciso che il ponte è il confine del suo mondo."
+     }
+    ],
+    "altrimenti": [
+     {
+      "se": "pecora_segue",
+      "allora": [
+       {
+        "dici": "Bee!",
+        "chi": "pecora_nera"
+       },
+       {
+        "pensa": "Mi sta ancora dietro. Dove vado io, va lei."
+       }
+      ],
+      "altrimenti": [
+       {
+        "se": "bisaccia",
+        "allora": [
+         {
+          "pensa": "Mi guarda offesa: le ho tolto il pranzo."
+         }
+        ],
+        "altrimenti": [
+         {
+          "pensa": "Una pecora nera, tutta sola."
+         },
+         {
+          "pensa": "Sta masticando qualcosa."
+         }
+        ]
+       },
+       {
+        "dici": "Bee?",
+        "chi": "pecora_nera"
+       },
+       {
+        "pensa": "Mi guarda come se volesse venire con me."
+       },
+       {
+        "segui": "pecora_nera"
+       },
+       {
+        "segno": "pecora_segue"
+       },
+       {
+        "pensa": "Mi sta seguendo! E adesso?"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "arriva_al_ponte": [
+   {
+    "se": "pecora_al_ponte",
+    "allora": [],
+    "altrimenti": [
+     {
+      "se": "pecora_segue",
+      "allora": [
+       {
+        "segui": null
+       },
+       {
+        "gira": "naufrago",
+        "verso": "giu"
+       },
+       {
+        "dici": "Bee...",
+        "chi": "pecora_nera"
+       },
+       {
+        "pensa": "Si è fermata. L'acqua no, proprio no."
+       },
+       {
+        "dici": "Ohi! Quella non segue mai nessuno! Zzz...",
+        "chi": "pastore"
+       },
+       {
+        "muovi": "pecora_nera",
+        "verso": "giu",
+        "caselle": 2
+       },
+       {
+        "nascondi": "pecora_nera"
+       },
+       {
+        "mostra": "pecora_nera",
+        "x": 7,
+        "y": 11
+       },
+       {
+        "segno": "pecora_al_ponte"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "parla_pecora": [
+   {
+    "suono": "belato"
+   },
+   {
+    "dici": "Beee.",
+    "chi": "pecora"
+   },
+   {
+    "conta": "pecore"
+   },
+   {
+    "se": "conta:pecore>=6",
+    "allora": [
+     {
+      "se": "pecore_contate",
+      "allora": [
+       {
+        "pensa": "Bruca e mi ignora."
+       }
+      ],
+      "altrimenti": [
+       {
+        "pensa": "Sei pecore... sette... sto contando le pecore."
+       },
+       {
+        "pensa": "Mi sta venendo un sonno..."
+       },
+       {
+        "segno": "pecore_contate"
+       }
+      ]
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Bruca e mi ignora."
+     }
+    ]
+   }
+  ],
+  "parla_nieddu": [
+   {
+    "suono": "miao"
+   },
+   {
+    "salva": "campidano_gatto"
+   },
+   {
+    "se": "nieddu_campidano",
+    "allora": [
+     {
+      "pensa": "Ron ron..."
+     },
+     {
+      "aiuto": "Partita salvata."
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Ancora tu? Anche qui?"
+     },
+     {
+      "pensa": "Questo gatto conosce la strada meglio di me."
+     },
+     {
+      "aiuto": "Partita salvata."
+     },
+     {
+      "segno": "nieddu_campidano"
+     }
+    ]
+   }
+  ],
+  "guarda_pinnetta": [
+   {
+    "pensa": "Una capanna di pietra con il tetto di frasche."
+   },
+   {
+    "pensa": "Da dentro arriva un odore di formaggio... molto forte."
+   }
+  ],
+  "guarda_perda_fitta": [
+   {
+    "conta": "perda"
+   },
+   {
+    "se": "conta:perda>=3",
+    "allora": [
+     {
+      "pensa": "Ciao, pietra."
+     },
+     {
+      "pensa": "..."
+     },
+     {
+      "pensa": "Bene. Almeno lei non mi chiede di giocare a morra."
+     }
+    ],
+    "altrimenti": [
+     {
+      "pensa": "Una pietra lunga, piantata dritta nel prato."
+     },
+     {
+      "pensa": "Qualcuno l'ha messa qui apposta. Tanto, tanto tempo fa."
+     }
+    ]
+   }
+  ],
+  "guarda_fiume": [
+   {
+    "pensa": "Acqua che corre verso il mare."
+   },
+   {
+    "pensa": "Lei torna indietro, io vado avanti."
+   }
+  ],
+  "guarda_grano": [
+   {
+    "pensa": "Grano maturo, alto fino alla cintura."
+   },
+   {
+    "pensa": "Ci sarà pane per tutto l'inverno."
+   }
+  ],
+  "guarda_olivo": [
+   {
+    "pensa": "Un olivo vecchissimo, tutto storto."
+   },
+   {
+    "pensa": "Avrà visto passare più gente lui del porto di Cagliari."
+   }
+  ],
+  "pensiero_campidano": [
+   {
+    "pensa": "Il Campidano. Grano fin dove arriva l'occhio."
+   },
+   {
+    "pensa": "E una strada dritta verso nord. Almeno non mi perdo."
+   }
+  ],
+  "pensiero_pastore_dorme": [
+   {
+    "pensa": "Di là dal fiume, sotto l'olivo, qualcuno dorme della grossa."
+   },
+   {
+    "pensa": "E il suo cane fa la guardia al ponticello."
+   }
+  ],
+  "pensiero_giara": [
+   {
+    "pensa": "Laggiù, a nord: una montagna piatta come una tavola."
+   },
+   {
+    "pensa": "Dev'essere la Giara."
+   }
+  ],
+  "verso_marmilla": [
+   {
+    "togli": "pecora_segue"
+   },
+   {
+    "pensa": "La Giara. Speriamo che i cavallini siano socievoli."
+   },
+   {
+    "aiuto": "La strada continua presto: la Marmilla è in arrivo!"
+   }
+  ],
+  "lascia_campidano": [
+   {
+    "togli": "pecora_segue"
+   }
+  ]
+ }
+}

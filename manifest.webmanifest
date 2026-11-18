@@ -1,0 +1,15 @@
+{
+  "name": "Morra Kombat",
+  "short_name": "Morra Kombat",
+  "lang": "it",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#0E1430",
+  "theme_color": "#0E1430",
+  "icons": [
+    { "src": "icone/icona_192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icone/icona_512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

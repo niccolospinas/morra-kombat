@@ -1,0 +1,356 @@
+{
+ "nome": "Cagliari",
+ "tile": 16,
+ "larghezza": 30,
+ "altezza": 12,
+ "fotogrammi": 4,
+ "ms_fotogramma": 350,
+ "onda_alta": 2,
+ "sfondo": "sfondo_{f}.png",
+ "arrivi": {
+  "poetto": {
+   "x": 26,
+   "y": 10,
+   "direzione": "su"
+  },
+  "campidano": {
+   "x": 1,
+   "y": 2,
+   "direzione": "giu"
+  }
+ },
+ "uscite": [
+  {
+   "x": 26,
+   "y": 11,
+   "verso": "poetto",
+   "arrivo": {
+    "x": 6,
+    "y": 1,
+    "direzione": "giu"
+   }
+  },
+  {
+   "x": 27,
+   "y": 11,
+   "verso": "poetto",
+   "arrivo": {
+    "x": 7,
+    "y": 1,
+    "direzione": "giu"
+   }
+  },
+  {
+   "x": 1,
+   "y": 1,
+   "verso": "campidano",
+   "arrivo": {
+    "x": 4,
+    "y": 22,
+    "direzione": "su"
+   },
+   "se": "efisio_battuto",
+   "scena": "verso_campidano",
+   "nota": "la porta di Stampace: casella bloccata finché non c'è il segno efisio_battuto"
+  }
+ ],
+ "porte": [
+  {
+   "id": "stampace",
+   "x": 1,
+   "y": 0,
+   "larghezza": 1,
+   "altezza": 2,
+   "immagine": "porta_stampace_aperta.png",
+   "se": "efisio_battuto",
+   "nota": "con il segno si disegna aperta e la casella (1, 1) diventa l'uscita"
+  }
+ ],
+ "personaggi": [
+  {
+   "id": "bue",
+   "x": 0,
+   "y": 7,
+   "direzione": "sinistra",
+   "sprite": "bue",
+   "inattivo": "rumina",
+   "parlando": "muggisce"
+  },
+  {
+   "id": "efisio",
+   "x": 8,
+   "y": 7,
+   "direzione": "giu",
+   "sprite": "efisio"
+  },
+  {
+   "id": "guardia",
+   "x": 15,
+   "y": 3,
+   "direzione": "giu",
+   "sprite": "guardia"
+  },
+  {
+   "id": "guardia_stampace",
+   "x": 0,
+   "y": 2,
+   "direzione": "destra",
+   "sprite": "guardia"
+  },
+  {
+   "id": "signora",
+   "x": 10,
+   "y": 7,
+   "direzione": "giu",
+   "sprite": "signora",
+   "inattivo": "sgrida"
+  },
+  {
+   "id": "velaio",
+   "x": 16,
+   "y": 9,
+   "direzione": "giu",
+   "sprite": "velaio",
+   "inattivo": "cuce"
+  },
+  {
+   "id": "suonatore",
+   "x": 22,
+   "y": 5,
+   "direzione": "giu",
+   "sprite": "suonatore",
+   "inattivo": "suona"
+  },
+  {
+   "id": "nieddu",
+   "x": 10,
+   "y": 2,
+   "direzione": "giu",
+   "sprite": "gatto",
+   "inattivo": "dorme",
+   "parlando": "sveglio"
+  }
+ ],
+ "animali": [
+  {
+   "tipo": "gabbiano",
+   "x": 120,
+   "y": 116,
+   "verso": 1
+  },
+  {
+   "tipo": "gabbiano",
+   "x": 196,
+   "y": 120,
+   "verso": -1
+  },
+  {
+   "tipo": "gabbiano",
+   "x": 118,
+   "y": 143,
+   "verso": 1,
+   "posato": "vascello"
+  }
+ ],
+ "eventi": [
+  {
+   "tipo": "parla",
+   "x": 0,
+   "y": 7,
+   "id": "bue",
+   "scena": "parla_bue",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "parla",
+   "x": 8,
+   "y": 7,
+   "id": "efisio",
+   "scena": "parla_efisio"
+  },
+  {
+   "tipo": "parla",
+   "x": 15,
+   "y": 3,
+   "id": "guardia",
+   "scena": "parla_guardia"
+  },
+  {
+   "tipo": "parla",
+   "x": 0,
+   "y": 2,
+   "id": "guardia_stampace",
+   "scena": "parla_guardia_stampace"
+  },
+  {
+   "tipo": "parla",
+   "x": 10,
+   "y": 7,
+   "id": "signora",
+   "scena": "parla_signora"
+  },
+  {
+   "tipo": "parla",
+   "x": 16,
+   "y": 9,
+   "id": "velaio",
+   "scena": "parla_velaio"
+  },
+  {
+   "tipo": "parla",
+   "x": 22,
+   "y": 5,
+   "id": "suonatore",
+   "scena": "parla_suonatore"
+  },
+  {
+   "tipo": "parla",
+   "x": 10,
+   "y": 2,
+   "id": "nieddu",
+   "scena": "parla_nieddu",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "guarda",
+   "x": 4,
+   "y": 9,
+   "id": "vascello",
+   "scena": "guarda_vascello"
+  },
+  {
+   "tipo": "guarda",
+   "x": 1,
+   "y": 1,
+   "id": "porta_stampace",
+   "scena": "guarda_porta_stampace"
+  },
+  {
+   "tipo": "guarda",
+   "x": 14,
+   "y": 2,
+   "id": "elefante",
+   "scena": "guarda_elefante"
+  },
+  {
+   "tipo": "guarda",
+   "x": 25,
+   "y": 3,
+   "larghezza": 2,
+   "id": "santuario",
+   "scena": "guarda_santuario"
+  },
+  {
+   "tipo": "guarda",
+   "x": 1,
+   "y": 7,
+   "larghezza": 2,
+   "id": "carretto",
+   "scena": "guarda_carretto"
+  },
+  {
+   "tipo": "guarda",
+   "x": 18,
+   "y": 9,
+   "id": "vele",
+   "scena": "guarda_vele"
+  },
+  {
+   "tipo": "guarda",
+   "x": 14,
+   "y": 10,
+   "id": "reti",
+   "scena": "guarda_reti",
+   "segreto": true,
+   "nota": "qui c'è il fazzoletto della signora (easter egg): non accende il tasto A"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 24,
+   "y": 5,
+   "larghezza": 4,
+   "altezza": 2,
+   "id": "citta",
+   "una_volta": true,
+   "scena": "pensiero_citta"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 4,
+   "y": 7,
+   "larghezza": 6,
+   "id": "porto",
+   "una_volta": true,
+   "scena": "pensiero_porto"
+  },
+  {
+   "tipo": "spavento",
+   "x": 3,
+   "y": 7,
+   "larghezza": 11,
+   "altezza": 2,
+   "id": "gabbiani",
+   "animale": "gabbiano",
+   "tornano": 4000,
+   "nota": "i gabbiani volano via se il naufrago passa vicino e tornano dopo 4 secondi (nessuna scena)"
+  }
+ ],
+ "suoni": [
+  {
+   "tipo": "risacca_porto",
+   "y_da": 140,
+   "y_a": 192,
+   "raggio": 48
+  },
+  {
+   "tipo": "gabbiani",
+   "x": 150,
+   "y": 120,
+   "raggio": 120
+  },
+  {
+   "tipo": "launeddas",
+   "x": 360,
+   "y": 88,
+   "raggio": 140,
+   "nota": "il tema del menu, suonato dal suonatore"
+  },
+  {
+   "tipo": "campane",
+   "x": 472,
+   "y": 16,
+   "raggio": 160,
+   "ogni_ms": 20000,
+   "nota": "dal campanile del santuario antico; con la scena fazzoletto_reso suonano a festa (campane_festa)"
+  },
+  {
+   "tipo": "muggito",
+   "x": 8,
+   "y": 120,
+   "raggio": 64,
+   "ogni_ms": 18000,
+   "nota": "Pistoccu, il bue di Efisio"
+  },
+  {
+   "tipo": "ronron",
+   "x": 168,
+   "y": 40,
+   "raggio": 24
+  }
+ ],
+ "testi": "../testi/cagliari.json",
+ "blocchi": [
+  "##############################",
+  "##############################",
+  "..###.####.#####.####.########",
+  "..###.####.###...####.########",
+  "..###.####.###...####.##....##",
+  ".............................#",
+  "............................##",
+  ".##........##..#####.###.#..##",
+  "...............#####.###.#..##",
+  "##############...#########..##",
+  "##############.......#####..##",
+  "##########################..##"
+ ]
+}

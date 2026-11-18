@@ -1,0 +1,415 @@
+{
+ "nome": "Campidano",
+ "tile": 16,
+ "larghezza": 12,
+ "altezza": 24,
+ "fotogrammi": 4,
+ "ms_fotogramma": 350,
+ "sfondo": "sfondo_{f}.png",
+ "arrivi": {
+  "cagliari": {
+   "x": 4,
+   "y": 22,
+   "direzione": "su"
+  }
+ },
+ "uscite": [
+  {
+   "x": 4,
+   "y": 23,
+   "verso": "cagliari",
+   "arrivo": {
+    "x": 1,
+    "y": 2,
+    "direzione": "giu"
+   },
+   "scena": "lascia_campidano"
+  },
+  {
+   "x": 5,
+   "y": 23,
+   "verso": "cagliari",
+   "arrivo": {
+    "x": 1,
+    "y": 2,
+    "direzione": "giu"
+   },
+   "scena": "lascia_campidano"
+  },
+  {
+   "x": 5,
+   "y": 0,
+   "verso": "marmilla",
+   "arrivo": {
+    "x": 0,
+    "y": 0,
+    "direzione": "su"
+   },
+   "scena": "verso_marmilla",
+   "nota": "la Marmilla non c'è ancora: dopo la scena si torna al menu; arrivo da definire con la zona"
+  },
+  {
+   "x": 6,
+   "y": 0,
+   "verso": "marmilla",
+   "arrivo": {
+    "x": 0,
+    "y": 0,
+    "direzione": "su"
+   },
+   "scena": "verso_marmilla"
+  }
+ ],
+ "personaggi": [
+  {
+   "id": "pastore",
+   "x": 8,
+   "y": 7,
+   "direzione": "giu",
+   "sprite": "pastore",
+   "inattivo": "dorme",
+   "parlando": "seduto",
+   "nota": "dorme sotto l'olivo dopo pranzo, di là dal fiume; quando gli si parla si sveglia (seduto)"
+  },
+  {
+   "id": "cane",
+   "x": 5,
+   "y": 11,
+   "direzione": "giu",
+   "sprite": "cane",
+   "inattivo": "seduto",
+   "parlando": "ringhia",
+   "posti": [
+    {
+     "se": "cane_passato",
+     "x": 9,
+     "y": 7,
+     "direzione": "giu",
+     "inattivo": "dorme",
+     "parlando": "scodinzola"
+    }
+   ],
+   "nota": "Lampu fa la guardia al ponticello finché non riceve la bisaccia del padrone"
+  },
+  {
+   "id": "bisaccia",
+   "x": 9,
+   "y": 14,
+   "direzione": "giu",
+   "sprite": "bisaccia",
+   "parlando": "fermo",
+   "posti": [
+    {
+     "se": "bisaccia",
+     "nascosto": true
+    }
+   ]
+  },
+  {
+   "id": "pecora_nera",
+   "x": 10,
+   "y": 14,
+   "direzione": "sinistra",
+   "sprite": "pecora_nera",
+   "inattivo": "bruca",
+   "posti": [
+    {
+     "se": "pecora_al_ponte",
+     "x": 7,
+     "y": 11,
+     "direzione": "sinistra"
+    }
+   ]
+  },
+  {
+   "id": "nieddu",
+   "x": 9,
+   "y": 3,
+   "direzione": "giu",
+   "sprite": "gatto",
+   "inattivo": "dorme",
+   "parlando": "sveglio"
+  },
+  {
+   "id": "pecora_1",
+   "x": 1,
+   "y": 12,
+   "direzione": "destra",
+   "sprite": "pecora",
+   "inattivo": "bruca"
+  },
+  {
+   "id": "pecora_2",
+   "x": 2,
+   "y": 13,
+   "direzione": "sinistra",
+   "sprite": "pecora",
+   "inattivo": "bruca"
+  },
+  {
+   "id": "pecora_3",
+   "x": 0,
+   "y": 14,
+   "direzione": "destra",
+   "sprite": "pecora",
+   "inattivo": "bruca"
+  },
+  {
+   "id": "pecora_4",
+   "x": 8,
+   "y": 12,
+   "direzione": "sinistra",
+   "sprite": "pecora",
+   "inattivo": "bruca"
+  },
+  {
+   "id": "pecora_5",
+   "x": 9,
+   "y": 12,
+   "direzione": "destra",
+   "sprite": "pecora",
+   "inattivo": "bruca"
+  },
+  {
+   "id": "pecora_6",
+   "x": 8,
+   "y": 4,
+   "direzione": "sinistra",
+   "sprite": "pecora",
+   "inattivo": "bruca"
+  }
+ ],
+ "eventi": [
+  {
+   "tipo": "parla",
+   "x": 8,
+   "y": 7,
+   "id": "pastore",
+   "scena": "parla_pastore"
+  },
+  {
+   "tipo": "parla",
+   "x": 5,
+   "y": 11,
+   "id": "cane",
+   "scena": "parla_cane"
+  },
+  {
+   "tipo": "parla",
+   "x": 9,
+   "y": 14,
+   "id": "bisaccia",
+   "scena": "prendi_bisaccia",
+   "verbo": "prendi"
+  },
+  {
+   "tipo": "parla",
+   "x": 10,
+   "y": 14,
+   "id": "pecora_nera",
+   "scena": "parla_pecora_nera",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "parla",
+   "x": 9,
+   "y": 3,
+   "id": "nieddu",
+   "scena": "parla_nieddu",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "parla",
+   "x": 1,
+   "y": 12,
+   "id": "pecora_1",
+   "scena": "parla_pecora",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "parla",
+   "x": 2,
+   "y": 13,
+   "id": "pecora_2",
+   "scena": "parla_pecora",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "parla",
+   "x": 0,
+   "y": 14,
+   "id": "pecora_3",
+   "scena": "parla_pecora",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "parla",
+   "x": 8,
+   "y": 12,
+   "id": "pecora_4",
+   "scena": "parla_pecora",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "parla",
+   "x": 9,
+   "y": 12,
+   "id": "pecora_5",
+   "scena": "parla_pecora",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "parla",
+   "x": 8,
+   "y": 4,
+   "id": "pecora_6",
+   "scena": "parla_pecora",
+   "verbo": "accarezza"
+  },
+  {
+   "tipo": "guarda",
+   "x": 9,
+   "y": 2,
+   "larghezza": 2,
+   "id": "pinnetta",
+   "scena": "guarda_pinnetta"
+  },
+  {
+   "tipo": "guarda",
+   "x": 10,
+   "y": 7,
+   "id": "perda_fitta",
+   "scena": "guarda_perda_fitta"
+  },
+  {
+   "tipo": "guarda",
+   "x": 4,
+   "y": 9,
+   "altezza": 2,
+   "id": "fiume",
+   "scena": "guarda_fiume"
+  },
+  {
+   "tipo": "guarda",
+   "x": 6,
+   "y": 9,
+   "altezza": 2,
+   "id": "fiume",
+   "scena": "guarda_fiume"
+  },
+  {
+   "tipo": "guarda",
+   "x": 7,
+   "y": 16,
+   "altezza": 6,
+   "id": "grano",
+   "scena": "guarda_grano"
+  },
+  {
+   "tipo": "guarda",
+   "x": 0,
+   "y": 16,
+   "id": "olivo",
+   "scena": "guarda_olivo"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 4,
+   "y": 21,
+   "larghezza": 2,
+   "id": "campidano",
+   "una_volta": true,
+   "scena": "pensiero_campidano"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 2,
+   "y": 12,
+   "larghezza": 6,
+   "id": "pastore_dorme",
+   "una_volta": true,
+   "scena": "pensiero_pastore_dorme"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 5,
+   "y": 8,
+   "larghezza": 2,
+   "id": "ponte",
+   "scena": "arriva_al_ponte"
+  },
+  {
+   "tipo": "pensiero",
+   "x": 5,
+   "y": 4,
+   "larghezza": 2,
+   "id": "giara",
+   "una_volta": true,
+   "scena": "pensiero_giara"
+  }
+ ],
+ "suoni": [
+  {
+   "tipo": "fiume",
+   "y_da": 144,
+   "y_a": 176,
+   "raggio": 64
+  },
+  {
+   "tipo": "campanacci",
+   "x": 48,
+   "y": 208,
+   "raggio": 120
+  },
+  {
+   "tipo": "russare",
+   "x": 136,
+   "y": 120,
+   "raggio": 80,
+   "nota": "il pastore che dorme; tace quando è sveglio (mentre gli si parla)"
+  },
+  {
+   "tipo": "cicale",
+   "ovunque": true,
+   "volume": 0.25
+  },
+  {
+   "tipo": "vento",
+   "ovunque": true,
+   "volume": 0.2
+  },
+  {
+   "tipo": "ronron",
+   "x": 152,
+   "y": 56,
+   "raggio": 24
+  }
+ ],
+ "testi": "../testi/campidano.json",
+ "blocchi": [
+  "#####.......",
+  "#####....##.",
+  "#####....##.",
+  "#####.......",
+  "####........",
+  "#####.....#.",
+  "#####...#...",
+  "####......#.",
+  "#...#..#..##",
+  "#####.######",
+  "#####.######",
+  "##.#....#..#",
+  "...........#",
+  "...........#",
+  "...........#",
+  ".......#####",
+  "#......#####",
+  ".......#####",
+  "#......#####",
+  "#......#####",
+  "#......#####",
+  "##.....#####",
+  "#.......####",
+  "#.......####"
+ ]
+}
